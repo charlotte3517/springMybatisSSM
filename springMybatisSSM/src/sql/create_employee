@@ -1,0 +1,16 @@
+use springmybatisssm;
+select * from springmybatisssm.employee;
+
+
+DROP TABLE IF EXISTS `employee`; 
+USE springmybatisssm;
+CREATE TABLE `employee` ( 
+  id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  fullname VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  birthday VARCHAR(10) NOT NULL,  
+  profession VARCHAR(50) NOT NULL,
+  finished_military VARCHAR(1) NOT NULL,
+  gender VARCHAR(1) NOT NULL,
+  note VARCHAR(50) NOT NULL
+);

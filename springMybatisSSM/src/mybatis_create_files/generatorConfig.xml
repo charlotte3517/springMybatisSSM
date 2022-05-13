@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+<!-- 指定連線資料庫時所需要的JDBC driver的檔案位置 -->
+	<classPathEntry
+		location="C:\Users\Charlotte He\Desktop\mybatis\mysql-connector-java-8.0.28.jar" />
+	<context id="MySQL" targetRuntime="MyBatis3">
+    
+		<commentGenerator>
+			<property name="suppressDate" value="false" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+        
+<!-- 資料庫連線設定 -->
+		<jdbcConnection
+			driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/springmybatisssm"
+			userId="root" password="1234" />
+            
+<!-- 要產生的model位置，targetProject的值為專案的Source folder，所以是gm/src/main/java -->
+		<javaModelGenerator
+			targetPackage="net.mycompany.pojo"
+			targetProject="src">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+        
+<!-- 要產生的MyBatis Mapper位置 --> 
+		<sqlMapGenerator targetPackage="net.mycompany.mapping"
+			targetProject="src">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+        
+<!-- 要產生的MyBatis Dao位置 --> 
+		<javaClientGenerator
+			targetPackage="net.mycompany.dao"
+			targetProject="src" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		
+        <!-- 要生成的資料表 -->
+		<table schema="springmybatisssm" tableName="employee"
+			domainObjectName="Emp" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false">
+		</table>
+
+	</context>
+</generatorConfiguration>
