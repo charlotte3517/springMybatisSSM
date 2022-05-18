@@ -11,6 +11,11 @@
 <script src="${pageContext.request.contextPath}/res/datetimepicker/jquery.datetimepicker.full.js"></script>
 <title>User Registration</title>
 <style type="text/css">
+	.error{
+		float:left;
+		margin-left: 520px;
+		color:red;
+	}
 	label {
 		display: inline-block;
 		width: 200px;
@@ -35,6 +40,7 @@
 		display: inline-block;
 		margin-left: 45px;
 	}
+
 </style>
 </head>
 <body>
@@ -43,20 +49,26 @@
 		<form:form action="registerInp" method="post" modelAttribute="emp">
 			<form:label path="id">Id</form:label>
 			<form:input path="id"/><br/>
+			<div class="error">${id}</div><br/>
 			<form:label path="fullname">Full Name</form:label>
-			<form:input path="fullname"/><br/>
+			<form:input path="fullname" required/><br/>
+			<div class="error">${fullname}</div><br/>
 			<form:label path="email">E-mail:</form:label>
-			<form:input path="email"/><br/>
+			<form:input path="email" required/><br/>
+			<div class="error">${email}</div><br/>
 			<form:label path="birthday">Birthday (yyyy-mm-dd)</form:label>
-			<form:input path="birthday" id="birthday" type="text"/><br/>
+			<form:input path="birthday" id="birthday" type="text" required/><br/>
+			<div class="error">${birthday}</div><br/>
 			<form:label path="profession">Profession:</form:label>
 			<form:select path="profession" items="${professionList}"/><br/>
+			<div class="error">${profession}</div><br/>
 			<form:label path="finishedMilitary">FinishedMilitary:</form:label>
 			<input type="checkbox" id="finishedMilitary_chk"/><br/>
 			<form:input path="finishedMilitary" id="finishedMilitary" style="display:none"/>
 			<form:label path="gender">Gender:</form:label>
 			<form:radiobutton path="gender" value="M"/>Male
 			<form:radiobutton path="gender" value="F"/>Female<br/>									
+			<div class="error">${gender}</div><br/>
 			<form:label path="note">Note:</form:label>
 			<form:textarea path="note" cols="25" rows="5"/></br>	
 			<form:button>Register</form:button>
@@ -92,5 +104,7 @@
      maxDate: '0'
     });
 	     
+    function is
+    
         
 </script>

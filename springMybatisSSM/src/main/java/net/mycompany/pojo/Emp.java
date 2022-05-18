@@ -1,20 +1,32 @@
 package net.mycompany.pojo;
 
-import java.util.Date;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 public class Emp {
+	@Digits(integer = 7,fraction = 0,message = "Id should be 7 digits")
     private Integer id;
-
+	
+	@NotBlank(message = "Please input your name." )
+	@Pattern(regexp="^[\\u4e00-\\u9fa5]+$|^[a-zA-Z\\s]+$", message = "Name should all be Chinese or all be English")
+	@Size(max = 50, message = "Name should be shorter than 50 words")
     private String fullname;
-
+	
+	@Email(message = "wrong email address type")
     private String email;
 
+	@NotBlank(message = "Please select your birthday." )
     private String birthday;
 
+	@NotBlank(message = "Please select your profession." )
     private String profession;
 
     private String finishedMilitary;
 
+    @NotBlank(message = "Please select your gender." )
     private String gender;
 
     private String note;
