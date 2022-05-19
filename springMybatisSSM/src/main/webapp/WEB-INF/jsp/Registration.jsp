@@ -51,13 +51,13 @@
 			<form:input path="id"/><br/>
 			<div class="error">${id}</div><br/>
 			<form:label path="fullname">Full Name</form:label>
-			<form:input path="fullname" required/><br/>
+			<form:input path="fullname"/><br/>
 			<div class="error">${fullname}</div><br/>
 			<form:label path="email">E-mail:</form:label>
-			<form:input path="email" required/><br/>
+			<form:input path="email"/><br/>
 			<div class="error">${email}</div><br/>
 			<form:label path="birthday">Birthday (yyyy-mm-dd)</form:label>
-			<form:input path="birthday" id="birthday" type="text" required/><br/>
+			<form:input path="birthday" id="birthday" type="text"/><br/>
 			<div class="error">${birthday}</div><br/>
 			<form:label path="profession">Profession:</form:label>
 			<form:select path="profession" items="${professionList}"/><br/>
@@ -104,7 +104,5 @@
      maxDate: '0'
     });
 	     
-    function is
-    
-        
+     
 </script>
